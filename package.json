@@ -1,0 +1,41 @@
+{
+  "name": "lioness",
+  "version": "1.0.1",
+  "description": "",
+  "main": "bot",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "github:discordjs/opus",
+    "@veams/helpers": "^1.4.1",
+    "axios": "^0.20.0",
+    "chart.js": "^2.9.3",
+    "chartjs-node-canvas": "^3.0.6",
+    "commando-provider-mongo": "^1.1.1",
+    "discord.js": "^12.2.0",
+    "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
+    "fs": "0.0.1-security",
+    "git": "^0.1.5",
+    "helper": "0.0.13",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.10.9",
+    "redis": "^3.0.2"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@schemas": "./schemas",
+    "@util": "./util",
+    "@features": "./features/features",
+    "@commands": "./commands/commands"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "eslint": "^7.11.0",
+    "nodemon": "^2.0.6"
+  }
+}
