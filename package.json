@@ -23,7 +23,8 @@
     "helper": "0.0.13",
     "module-alias": "^2.2.2",
     "mongoose": "^5.10.9",
-    "redis": "^3.0.2"
+    "redis": "^3.0.2",
+    "unb-api": "^1.2.0"
   },
   "_moduleAliases": {
     "@root": ".",
