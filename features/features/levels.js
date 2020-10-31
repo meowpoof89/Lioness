@@ -41,7 +41,7 @@ console.log('RESULT:', result)
     ++level
     xp -= needed
 
-    message.reply(
+    message.member.send(
       `You are now level ${level} with ${xp} experience! 
       You now need ${getNeededXP(
         level

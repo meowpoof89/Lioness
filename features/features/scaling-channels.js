@@ -1,4 +1,5 @@
-const channelName = '🎓Tutoring'
+// const channelName = '🎓Tutoring'
+const channelName = 'Interview'
 
 const getVoiceChannels = (guild) => {
   return guild.channels.cache.filter((channel) => {

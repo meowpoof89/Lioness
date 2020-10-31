@@ -1,7 +1,5 @@
 {
     "token": "NzYyNTAzOTI1MTQ3NjMxNjQ2.X3qHHg.Xbkw9UjntqGy0nIXYXrqACIusBw",
     "prefix": "L!",
-    "mongoPath": "mongodb://localhost:27017/lioness",
-    "redisPath": "//redis-14096.c238.us-central1-2.gce.cloud.redislabs.com:14096?password=lrubEeJ2GKI8bZHgJkvXD8dt12d5zep6",
     "mongoPass": "mongodb+srv://meowpoof:foxworthy.12@lioness.rd6up.mongodb.net/Lioness?retryWrites=true&w=majority"
 }
