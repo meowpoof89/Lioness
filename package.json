@@ -21,6 +21,7 @@
     "fs": "0.0.1-security",
     "git": "^0.1.5",
     "helper": "0.0.13",
+    "install": "^0.13.0",
     "module-alias": "^2.2.2",
     "mongoose": "^5.10.9",
     "node-pre-gyp": "^0.16.0",
