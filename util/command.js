@@ -1,4 +1,4 @@
-const prefix = require(process.env.PREFIX)
+const { prefix } = require('@root/config.json')
 
 module.exports = (client, aliases, callback) => {
   if (typeof aliases === 'string') {
