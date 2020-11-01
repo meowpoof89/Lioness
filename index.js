@@ -19,7 +19,7 @@ const modLogs = require('@features/mod-logs')
 
 const client = new Commando.CommandoClient({
   owner: '262668355520036874',
-  commandPrefix: config.prefix,
+  commandPrefix: process.env.PREFIX,
 })
 
 client.setProvider(
