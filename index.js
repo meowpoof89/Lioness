@@ -55,8 +55,8 @@ client.on('ready', async () => {
     .registerCommandsIn(path.join(__dirname, 'cmds'))
 
   loadLanguages(client)
-  // commandBase.loadPrefixes(client)
-  // loadCommands(client)
+  commandBase.loadPrefixes(client)
+  loadCommands(client)
   loadFeatures(client)
 
   modLogs(client)
