@@ -1,7 +1,7 @@
 const economy = require('@features/economy')
 
 module.exports = {
-  commands: ['addbalance', 'addbal', 'addgold'],
+  commands: 'addgold',
   minArgs: 2,
   maxArgs: 2,
   expectedArgs: "<The target's @> <gold amount>",
