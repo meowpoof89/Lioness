@@ -8,7 +8,7 @@ const MongoDBProvider = require('commando-provider-mongo')
 const path = require('path')
 const Commando = require('discord.js-commando')
 
-const config = require('@root/config.json')
+// const config = require('@root/config.json')
 const { loadLanguages } = require('@util/language')
 const loadCommands = require('@root/commands/load-commands')
 const commandBase = require('@root/commands/command-base')
@@ -28,7 +28,7 @@ client.setProvider(
     useFindAndModify: false,
   })
     .then((client) => {
-      return new MongoDBProvider(client, 'WornOffKeys')
+      return new MongoDBProvider(client, 'Lioness')
     })
     .catch((err) => {
       console.error(err)
@@ -62,4 +62,4 @@ client.on('ready', async () => {
   modLogs(client)
 })
 
-client.login(config.token)
+client.login(process.env.TOKEN)
