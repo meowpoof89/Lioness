@@ -13,7 +13,7 @@ module.exports = {
     const guildId = message.guild.id
     const userId = target.id
 
-    const gold = await economy.getGold(guildId, userId)
+    const gold = await economy.getGold(guildId, userId, gold)
 
     message.reply(`That user has ${gold} gold!`)
   },
