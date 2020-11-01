@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { mongoPath } = require('@root/config.json')
+const { mongoPath } = require(process.env.MONGO_PATH)
 
 module.exports = async () => {
   mongoose.connect(mongoPath, {
