@@ -1,4 +1,4 @@
-const channelId = '765986090708369418'
+const channelId = '772296301345112075'
 const check = '✅'
 let registered = false
 

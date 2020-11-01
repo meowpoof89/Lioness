@@ -12,7 +12,7 @@ module.exports = (client) => {
     if (message.author.id === '262668355520036874'){
       return
     }
-    if (!message.content.startsWith("!", "!!", "!!!", "-", ".", "zt!", "?", "!!!!")){
+    if (!message.content.startsWith(prefix)){
       return
     }
     const hasRole = member.roles.cache.find((role) => {

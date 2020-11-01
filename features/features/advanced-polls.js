@@ -1,4 +1,4 @@
-const channels = ['766382301197762640']
+const channels = ['731801004462571602']
 
 module.exports = (client) => {
   client.on('message', (message) => {

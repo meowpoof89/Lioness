@@ -3,7 +3,6 @@ const warnSchema = require('@schemas/warn-schema')
 module.exports = {
   commands: ['listwarnings', 'lw'],
   minArgs: 1,
-  description: 'List warnings for a user',
   expectedArgs: "<Target user's @>",
   requiredRoles: ['Moderator'],
   callback: async (message, arguments, text) => {

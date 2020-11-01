@@ -33,7 +33,7 @@ const addXP = async (guildId, userId, xpToAdd, message) => {
       new: true,
     }
   )
-console.log('RESULT:', result)
+
   let { xp, level } = result
   const needed = getNeededXP(level)
 
@@ -42,8 +42,7 @@ console.log('RESULT:', result)
     xp -= needed
 
     message.member.send(
-      `You are now level ${level} with ${xp} experience! 
-      You now need ${getNeededXP(
+      `You are now level ${level} with ${xp} experience! You now need ${getNeededXP(
         level
       )} XP to level up again.`
     )

@@ -1,10 +1,9 @@
 const punishmentLogSchema = require('@schemas/punishment-log-schema')
 
 module.exports = {
-  commands: ['punishmentlogs', 'punishlogs', 'pl'],
+  commands: ['punishmentlogs', 'punishlogs'],
   minArgs: 1,
   maxArgs: 1,
-  description: 'Shows punishments issued by user.',
   expectedArgs: "<Target user's @>",
   permission: 'ADMINISTRATORS',
   callback: async (message, arguments) => {

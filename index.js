@@ -28,7 +28,7 @@ client.setProvider(
     useFindAndModify: false,
   })
     .then((client) => {
-      return new MongoDBProvider(client, 'Lioness')
+      return new MongoDBProvider(client, 'WornOffKeys')
     })
     .catch((err) => {
       console.error(err)
@@ -48,13 +48,15 @@ client.on('ready', async () => {
       ['giveaway', 'Commands to manage giveaways'],
       ['games', 'Commands to handle games'],
       ['thanks', 'Commands to help thank people'],
+      ['suggestions', 'Commands regarding suggestions'],
+      ['testing', 'Commands to test joining and leaving'],
     ])
     .registerDefaults()
     .registerCommandsIn(path.join(__dirname, 'cmds'))
 
   loadLanguages(client)
-  commandBase.loadPrefixes(client)
-  loadCommands(client)
+  // commandBase.loadPrefixes(client)
+  // loadCommands(client)
   loadFeatures(client)
 
   modLogs(client)

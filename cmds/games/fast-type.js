@@ -155,6 +155,8 @@ module.exports = class FastTypeGame extends Commando.Command {
         counter: 5,
         remainingWords: [...words],
         points: {
+          '719805930547445772': 4,
+          '723819104045105172': 1,
         },
       }
     })

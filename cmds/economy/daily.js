@@ -1,5 +1,6 @@
 const Commando = require('discord.js-commando')
 const dailyRewardsSchema = require('@schemas/daily-rewards-schema')
+const addGold = require('@commands/economy/add-balance.js')
 
 // Array of member IDs who have claimed their daily rewards in the last 24 hours
 // Resets every 10 minutes
@@ -64,24 +65,11 @@ module.exports = class DailyCommand extends Commando.Command {
     })
 
     claimedCache.push(id)
-
-    const economy = require('@features/economy')
-   
-
-
-    const daily = 5000
-
-    
-
-    const guildId = message.guild.id
-    const userId = message.author.id
-
-    const newGold = await economy.addGold(guildId, userId, daily)
-
-    const gold = await economy.getGold(guildId, userId)
-
+    const addGold = 5000
+    const newGold = await economy.addGold(guildId, userId, gold)
 
     // TODO: Give the rewards
-    message.reply(`You have claimed your daily reward of ${daily}! You now how ${gold}!!`)
+    message.reply(`You have claimed your daily reward of ${daily}! 
+    You now how ${gold}!!`)
   }
 }

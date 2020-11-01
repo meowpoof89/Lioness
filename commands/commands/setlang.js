@@ -3,10 +3,9 @@ const { languages } = require('@root/lang.json')
 const { setLanguage } = require('@util/language')
 
 module.exports = {
-  commands: ['setlang', 'setlanguage', 'sl'],
+  commands: ['setlang', 'setlanguage'],
   minArgs: 1,
   maxArgs: 1,
-  description: 'Set server language',
   expectedArgs: '<Language>',
   permissions: 'ADMINISTRATOR',
   callback: async (message, arguments) => {

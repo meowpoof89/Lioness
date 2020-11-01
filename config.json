@@ -1,5 +1,5 @@
 {
     "token": "NzYyNTAzOTI1MTQ3NjMxNjQ2.X3qHHg.Xbkw9UjntqGy0nIXYXrqACIusBw",
     "prefix": "L!",
-    "mongoPass": "mongodb+srv://meowpoof:foxworthy.12@lioness.rd6up.mongodb.net/Lioness?retryWrites=true&w=majority"
+    "mongoPath": "mongodb+srv://meowpoof:foxworthy.12@lioness.rd6up.mongodb.net/Lioness?retryWrites=true&w=majority"
 }

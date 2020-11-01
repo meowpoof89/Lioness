@@ -1,12 +1,12 @@
 module.exports = {
-  commands: ['done', 'rr'],
+  commands: ['removerole', 'delrole', 'deleterole'],
   minArgs: 2,
-  description: 'Remove a role from a user',
   expectedArgs: "<Target user's @> <The role name>",
+  permissions: 'ADMINISTRATOR',
   callback: (message, arguments) => {
     const targetUser = message.mentions.users.first()
     if (!targetUser) {
-      message.reply('Please specify someone to take a role from.')
+      message.reply('Please specify someone to give a role to.')
       return
     }
 

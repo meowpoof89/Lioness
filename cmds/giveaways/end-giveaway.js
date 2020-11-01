@@ -31,8 +31,7 @@ module.exports = class EndGiveawayCommand extends Commando.Command {
         })
 
         const winner =
-          possibleWinners[Math.floor(Math.random() * 
-            possibleWinners.length)]
+          possibleWinners[Math.floor(Math.random() * possibleWinners.length)]
 
         console.log(winner)
       })

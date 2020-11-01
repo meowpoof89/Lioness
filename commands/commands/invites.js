@@ -6,7 +6,8 @@ module.exports = {
 
     guild.fetchInvites().then((invites) => {
       const inviteCounter = {
-        
+        bob: 19,
+        joe: 30,
       }
 
       invites.forEach((invite) => {

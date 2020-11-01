@@ -8,7 +8,6 @@ module.exports = {
   commands: 'setprefix',
   minArgs: 1,
   maxArgs: 1,
-  description: 'Change the prefix on your server.',
   expectedArgs: "<This bot's new command prefix>",
   permissionError: 'You must be an admin to run this command.',
   permissions: 'ADMINISTRATOR',
@@ -29,7 +28,7 @@ module.exports = {
       }
     )
 
-    message.reply(`My prefix is now ${prefix}`)
+    message.reply(`The prefix for this bot is now ${prefix}`)
 
     // Update the cache
     commandBase.updateCache(guildId, prefix)

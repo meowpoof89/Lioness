@@ -9,7 +9,6 @@ const addReactions = (message, reactions) => {
 module.exports = async (client, id, text, reactions = []) => {
   const channel = await client.channels.cache.get(id)
   if (!channel) {
-    console.log('unknown channel ' + id)
     return
   }
 

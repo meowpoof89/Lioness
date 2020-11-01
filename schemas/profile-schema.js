@@ -8,8 +8,7 @@ const reqString = {
 const profileSchema = mongoose.Schema({
   guildId: reqString,
   userId: reqString,
-
-  gold: {
+  coins: {
     type: Number,
     default: 0,
   },
@@ -22,7 +21,5 @@ const profileSchema = mongoose.Schema({
     default: 1,
   },
 })
-
-
 
 module.exports = mongoose.model('profiles', profileSchema)

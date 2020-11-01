@@ -1,6 +1,4 @@
 const mongoose = require('mongoose')
-const { gold } = require('@commands/economy/add-balance')
-
 
 const reqString = {
   type: String,
@@ -11,12 +9,9 @@ const dailyRewardsSchema = mongoose.Schema(
   {
     guildId: reqString,
     userId: reqString,
-    gold: Number,
   },
-  
   {
     timestamps: true,
-    upsert: true
   }
 )
 

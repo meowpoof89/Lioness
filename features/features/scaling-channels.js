@@ -1,4 +1,3 @@
-// const channelName = '🎓Tutoring'
 const channelName = 'Interview'
 
 const getVoiceChannels = (guild) => {

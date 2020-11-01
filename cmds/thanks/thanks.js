@@ -38,12 +38,12 @@ module.exports = class ThanksCommand extends Commando.Command {
       const then = new Date(authorData.lastGave)
 
       const diff = now.getTime() - then.getTime()
-      const diffHours = Math.round(diff / (1000 * 60 * 60))
+      const diffMinutes = Math.round(diff / (1000 * 60))
 
-      const hours = (24 / 60 / 60 * 1)
-      if (diffHours <= hours) {
+      const minutes = 10
+      if (diffMinutes <= minutes) {
         message.reply(
-          `You have already thanked someone within the last ${hours} hours.`
+          `You have already thanked someone within the last ${minutes} minutes.`
         )
         return
       }

@@ -4,9 +4,8 @@ const punishmentLogSchema = require('@schemas/punishment-log-schema')
 module.exports = {
   commands: 'warn',
   minArgs: 2,
-  description: 'Issue a warning to a user.',
   expectedArgs: "<Target user's @> <reason>",
-  requiredRoles: ['Admin'],
+  requiredRoles: ['Moderator'],
   callback: async (message, arguments) => {
     const target = message.mentions.users.first()
     if (!target) {
