@@ -23,7 +23,7 @@ const client = new Commando.CommandoClient({
 })
 
 client.setProvider(
-  MongoClient.connect(config.mongoPath, {
+  MongoClient.connect(process.env.MONGO_PATH, {
     useUnifiedTopology: true,
     useFindAndModify: false,
   })
