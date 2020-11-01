@@ -35,7 +35,7 @@ module.exports = {
     const newBalance = await economy.addGold(
       guild.id, target.id, goldToGive
       )
-    const newBalance = await economy.addGold(guild.id, target.id, goldToGive)
+    
 
     message.reply(
       `You have given <@${target.id}> ${goldToGive} gold bar(s)! 
