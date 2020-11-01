@@ -6,7 +6,7 @@
  */
 
 const commandPrefixSchema = require('@schemas/command-prefix-schema')
-const { prefix: globalPrefix } = process.env.PREFIX
+const { prefix: globalPrefix } = require('@root/config.json')
 const guildPrefixes = {} // { 'guildId' : 'prefix' }
 
 const validatePermissions = (permissions) => {
