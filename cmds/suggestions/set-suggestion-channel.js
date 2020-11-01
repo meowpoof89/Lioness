@@ -16,7 +16,8 @@ module.exports = class SetSuggestionChannelCommand extends Commando.Command {
   run = async (message) => {
     const channel = message.mentions.channels.first() || message.channel
 
-    const {guild: { id: guildId },
+    const {
+      guild: { id: guildId },
     } = message
     const { id: channelId } = channel
 

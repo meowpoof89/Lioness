@@ -11,4 +11,4 @@ const suggestionSchema = mongoose.Schema({
   channelId: reqString,
 })
 
-module.exports = mongoose.model('suggestion-channel', suggestionSchema)
+module.exports = mongoose.model('suggestion-channels', suggestionSchema)

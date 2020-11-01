@@ -63,7 +63,7 @@ module.exports = class CovidCommand extends Commando.Command {
           {
             label: 'Cases',
             data: cases,
-            color: '#7289d9',//
+            color: '#7289d9',
             backgroundColor: '#7289d9',
             borderColor: '#7289d9',
             fill: false,

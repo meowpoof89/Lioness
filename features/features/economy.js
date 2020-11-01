@@ -16,7 +16,7 @@ module.exports.addGold = async (guildId, userId, gold) => {
       guildId,
       userId,
       $inc: {
-        gold: gold,
+        gold,
       },
     },
     {

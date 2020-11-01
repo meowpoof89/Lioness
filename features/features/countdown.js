@@ -1,28 +1,27 @@
-// const topMembers = require('@features/thanks-leaderboard')
 const seconds = 5
-const startingTimer = 60
-let timer = startingTimer
+const startingCounter = 60
+let counter = startingCounter
 let importantData = ''
 
 const fetchData = async () => {
-  importantData = topMembers()
+  importantData = 'hello world'
 }
 
 const getText = () => {
-  return (`${importantData}\n\nUpdating in ${timer}s...`)
+  return `${importantData}\n\nUpdating in ${counter}s...`
 }
 
-const updateTimer = async (message) => {
+const updateCounter = async (message) => {
   message.edit(getText())
-  timer -= seconds
+  counter -= seconds
 
-  if (timer <= 0) {
-    timer = startingTimer
+  if (counter <= 0) {
+    counter = startingCounter
     await fetchData()
   }
 
   setTimeout(() => {
-    updateTimer(message)
+    updateCounter(message)
   }, 1000 * seconds)
 }
 
@@ -31,9 +30,9 @@ module.exports = async (client) => {
   await fetchData()
 
   const guild = client.guilds.cache.first()
-  const channel = guild.channels.cache.get('772327371713019917')
+  const channel = guild.channels.cache.get('')//channelId
 
   const message = await channel.send(getText())
 
-  updateTimer(message)
+  updateCounter(message)
 }

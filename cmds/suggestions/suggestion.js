@@ -34,7 +34,7 @@ module.exports = class SuggestionCommand extends Commando.Command {
 
     const channelId = suggestionCache()[guild.id]
     if (!channelId) {
-      message.reply(`An error has occured, please report this to the Founder of the server`)
+      message.reply('An error occurred, please report this')
       return
     }
 

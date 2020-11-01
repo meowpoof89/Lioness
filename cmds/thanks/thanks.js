@@ -6,7 +6,7 @@ module.exports = class ThanksCommand extends Commando.Command {
     super(client, {
       name: 'thanks',
       group: 'thanks',
-      memberName: 'thx',
+      memberName: 'thanks',
       description: 'Thanks a user for helping you',
     })
   }
