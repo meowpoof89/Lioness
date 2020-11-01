@@ -1,7 +1,7 @@
 require('module-alias/register')
 
-// const Discord = require('discord.js')
-// const client = new Discord.Client()
+const Discord = require('discord.js')
+const client = new Discord.Client()
 
 const { MongoClient } = require('mongodb')
 const MongoDBProvider = require('commando-provider-mongo')
