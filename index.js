@@ -8,7 +8,7 @@ const MongoDBProvider = require('commando-provider-mongo')
 const path = require('path')
 const Commando = require('discord.js-commando')
 
-// const config = require('@root/config.json')
+const config = require('@root/config.json')
 const { loadLanguages } = require('@util/language')
 const loadCommands = require('@root/commands/load-commands')
 const commandBase = require('@root/commands/command-base')
@@ -19,7 +19,7 @@ const modLogs = require('@features/mod-logs')
 
 const client = new Commando.CommandoClient({
   owner: '262668355520036874',
-  commandPrefix: process.env.PREFIX,
+  commandPrefix: config.prefix,
 })
 
 client.setProvider(
