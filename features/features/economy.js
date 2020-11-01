@@ -1,10 +1,10 @@
 const profileSchema = require('@schemas/profile-schema')
 
-const coinsCache = {} // { 'guildId-userId': coins }
+const goldCache = {} // { 'guildId-userId': gold }
 
 module.exports = (client) => {}
 
-module.exports.addCoins = async (guildId, userId, coins) => {
+module.exports.addGold = async (guildId, userId, gold) => {
   console.log('Running findOneAndUpdate()')
 
   const result = await profileSchema.findOneAndUpdate(
@@ -16,7 +16,7 @@ module.exports.addCoins = async (guildId, userId, coins) => {
       guildId,
       userId,
       $inc: {
-        coins,
+        gold: gold,
       },
     },
     {
@@ -25,13 +25,13 @@ module.exports.addCoins = async (guildId, userId, coins) => {
     }
   )
 
-  coinsCache[`${guildId}-${userId}`] = result.coins
+  goldCache[`${guildId}-${userId}`] = result.gold
 
-  return result.coins
+  return result.gold
 }
 
-module.exports.getCoins = async (guildId, userId) => {
-  const cachedValue = coinsCache[`${guildId}-${userId}`]
+module.exports.getGold = async (guildId, userId) => {
+  const cachedValue = goldCache[`${guildId}-${userId}`]
   if (cachedValue) {
     return cachedValue
   }
