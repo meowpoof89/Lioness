@@ -1,6 +1,6 @@
-const { prefix } = require(process.env.PREFIX)
+// const { prefix } = require(process.env.PREFIX)
 
-export default (client, aliases, callback) => {
+module.exports = (client, aliases, callback) => {
   if (typeof aliases === 'string') {
     aliases = [aliases]
   }
@@ -9,7 +9,7 @@ export default (client, aliases, callback) => {
     const { content } = message
 
     aliases.forEach((alias) => {
-      const command = `${prefix}${alias}`
+      const command = `${process.env.PREFIX}${alias}`
 
       if (content.startsWith(`${command} `) || content === command) {
         console.log(`Running the command ${command}`)
