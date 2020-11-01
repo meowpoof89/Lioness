@@ -1,6 +1,6 @@
 const { prefix } = require(process.env.PREFIX)
 
-module.exports = (client, aliases, callback) => {
+export default (client, aliases, callback) => {
   if (typeof aliases === 'string') {
     aliases = [aliases]
   }

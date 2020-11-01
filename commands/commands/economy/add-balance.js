@@ -18,7 +18,7 @@ module.exports = {
 
     const gold = arguments[1]
     if (isNaN(gold)) {
-      message.reply('Please provide a valid numnber of gold.')
+      message.reply('Please provide a valid number of gold.')
       return
     }
 
