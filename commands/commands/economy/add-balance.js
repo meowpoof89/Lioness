@@ -1,4 +1,6 @@
 const economy = require('@features/economy')
+const Commando = require('discord.js-commando')
+
 
 module.exports = {
   commands: ['addbalance', 'addbal', 'addgold'],

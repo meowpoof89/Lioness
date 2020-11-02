@@ -4,7 +4,7 @@ const economy = require('@features/economy')
 module.exports = class BalanceCommand extends Commando.Command {
   constructor(client) {
     super(client, {
-      name: 'balance',
+      name: ['balance', 'bal'],
       group: 'economy',
       memberName: 'balance',
       description: 'Checks balance of user',
