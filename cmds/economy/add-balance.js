@@ -13,7 +13,7 @@ module.exports = class AddGoldCommand extends Commando.Command {
     })
   }
 
-run = async (message, arguments) => {
+run = async (message, args) => {
     // l!addgold @ <gold>
     const target = message.mentions.users.first()
 
@@ -22,7 +22,7 @@ run = async (message, arguments) => {
       return
     }
 
-    const gold = arguments[1]
+    const gold = args[1]
     if (isNaN(gold)) {
       message.reply('Please provide a valid number of gold.')
       return
