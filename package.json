@@ -1,0 +1,45 @@
+{
+  "name": "lioness",
+  "version": "1.0.1",
+  "description": "Multi-purpose bot for singularity use",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "production": "NODE_ENV=production&&npm start",
+    "development": "set NODE_ENV=development&&npm start"
+  },
+  "keywords": [],
+  "author": "meowpoof89",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "github:discordjs/opus",
+    "axios": "^0.20.0",
+    "chart.js": "^2.9.4",
+    "chartjs-node-canvas": "^3.0.6",
+    "commando-provider-mongo": "^1.1.1",
+    "discord.js": "^12.4.1",
+    "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
+    "dotenv": "^8.2.0",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.10.11",
+    "node.js": "0.0.1-security",
+    "nodemon": "^2.0.6"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@schemas": "./schemas",
+    "@util": "./util",
+    "@features": "./features/features",
+    "@commands": "./commands/commands"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meowpoof89/lioness.git"
+  },
+  "bugs": {
+    "url": "https://github.com/meowpoof89/lioness/issues"
+  },
+  "homepage": "https://github.com/meowpoof89/lioness#readme"
+}
