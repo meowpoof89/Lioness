@@ -9,6 +9,7 @@ const dailyRewardsSchema = mongoose.Schema(
   {
     guildId: reqString,
     userId: reqString,
+    gold: Number,
   },
   {
     timestamps: true,
