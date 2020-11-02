@@ -4,7 +4,7 @@ const economy = require('@features/economy')
 module.exports = class BalanceCommand extends Commando.Command {
   constructor(client) {
     super(client, {
-      name: ['balance', 'bal'],
+      name: 'bal',
       group: 'economy',
       memberName: 'balance',
       description: 'Checks balance of user',
@@ -20,7 +20,7 @@ module.exports = class BalanceCommand extends Commando.Command {
 
     const gold = await economy.getGold(guildId, userId)
 
-    message.reply(`That user has ${gold} gold!`)
+    channel.message.reply(`${userId} has ${gold} gold bars!`)
 
 
     }
