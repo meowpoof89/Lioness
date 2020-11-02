@@ -9,7 +9,7 @@ let claimedCache = []
 
 const clearCache = () => {
   claimedCache = []
-  setTimeout(clearCache, 1000 * 60 * 10) // 10 minutes
+  setTimeout(clearCache, 1000 * 60 * 1) // 1 minutes
 }
 clearCache()
 
@@ -28,6 +28,7 @@ module.exports = class DailyCommand extends Commando.Command {
   async run(message) {
     const { guild, member } = message
     const { id } = member
+    
 
     if (claimedCache.includes(id)) {
       console.log('Returning from cache')
@@ -46,7 +47,7 @@ module.exports = class DailyCommand extends Commando.Command {
 
     console.log('RESULTS:', results)
 
-    if (results) {
+    if (results || !!results) {
       const then = new Date(results.updatedAt).getTime()
       const now = new Date().getTime()
 
