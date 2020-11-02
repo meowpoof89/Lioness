@@ -8,14 +8,16 @@ module.exports = class AddGoldCommand extends Commando.Command {
         group: 'economy',
         memberName: 'addgold',
         description: 'Adds gold to a users account',
-        userPermissions: 'ADMINISTRATOR',
+        userPermissions: ['ADMINISTRATOR'],
+        argsType: 'multiple',
     })
   }
 
-async run(message) {
-    const mention = message.mentions.users.first()
+run = async (message, arguments) => {
+    // l!addgold @ <gold>
+    const target = message.mentions.users.first()
 
-    if (!mention) {
+    if (!target) {
       message.reply('Please tag a user to add gold to.')
       return
     }
@@ -27,7 +29,7 @@ async run(message) {
     }
 
     const guildId = message.guild.id
-    const userId = mention.id
+    const userId = target.id
 
     const newGold = await economy.addGold(guildId, userId, gold)
 
