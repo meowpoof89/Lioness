@@ -6,7 +6,7 @@
  */
 
 const commandPrefixSchema = require('@schemas/command-prefix-schema')
-const { prefix: globalPrefix } = require('@root/config.json')
+const { prefix: globalPrefix } = process.env.PREFIX
 const guildPrefixes = {} // { 'guildId' : 'prefix' }
 
 const validatePermissions = (permissions) => {
@@ -72,7 +72,7 @@ module.exports = (client, commandOptions) => {
     commands = [commands]
   }
 
-  console.log(`Registering command "${commands[0]}"`)
+  console.log(`Registering command "${commands}"`)
 
   // Ensure the permissions are in an array and are all valid
   if (permissions.length) {

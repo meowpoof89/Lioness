@@ -1,5 +1,5 @@
 const loadCommands = require('@root/commands/load-commands')
-const { prefix } = require('@root/config.json')
+const prefix = process.env.PREFIX
 
 module.exports = {
   commands: ['help', 'h'],
