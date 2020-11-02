@@ -6,5 +6,6 @@ module.exports = async () => {
     keepAlive: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
   })
 }
