@@ -72,10 +72,10 @@ module.exports = class DailyCommand extends Commando.Command {
 
     claimedCache.push(id)
 
-    const gold = 5000
+    const daily = 5000
     const newGold = await economy.addGold(guildId, userId, gold)
     // TODO: Give the rewards
     message.reply(`You have claimed your daily reward of ${daily}! 
-    You now how ${gold}!!`)
+    You now have ${newGold}!!`)
   }
 }
