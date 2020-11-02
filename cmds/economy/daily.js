@@ -1,6 +1,6 @@
 const Commando = require('discord.js-commando')
 const dailyRewardsSchema = require('@schemas/daily-rewards-schema')
-const addGold = require('@commands/economy/add-balance.js')
+// const addGold = require('@commands/economy/add-balance.js')
 const economy = require('@features/economy')
 
 // Array of member IDs who have claimed their daily rewards in the last 24 hours
