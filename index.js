@@ -22,16 +22,7 @@ const client = new Commando.CommandoClient({
   commandPrefix: process.env.PREFIX,
   invite: 'https://discord.gg/Sk6ftSF'
 })
-let ver = process.env.NODE_ENV;
 
-client.on('ready', () => {
-
-  if (ver === 'production') {
-    client.user.setActivity('An Idiot\'s Guide', { type: 'STREAMING', url: 'https://twitch.tv/something' })
-  } else {
-    client.user.setActivity('in code land', { type: 'PLAYING' });
-  }
-});
 client.setProvider(
   MongoClient.connect(process.env.MONGO_PATH, {
     useUnifiedTopology: true,
@@ -44,11 +35,17 @@ client.setProvider(
       console.error(err)
     })
 )
+  let ver = process.env.NODE_ENV;
 
 client.on('ready', async () => {
   console.log('The client is ready!')
-  client.user.setActivity('with Commando')
-
+  
+    if (ver === 'production') {
+      client.user.setActivity('An Idiot\'s Guide', { type: 'STREAMING', url: 'https://twitch.tv/something' })
+    } else {
+      client.user.setActivity('in code land', { type: 'PLAYING' });
+    }
+ 
   await mongo()
 
   client.registry
