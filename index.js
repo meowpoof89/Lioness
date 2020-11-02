@@ -1,7 +1,7 @@
 require('module-alias/register')
 
-const Discord = require('discord.js')
-const client = new Discord.Client()
+// const Discord = require('discord.js')
+// const client = new Discord.Client()
 
 const { MongoClient } = require('mongodb')
 const MongoDBProvider = require('commando-provider-mongo')
@@ -20,6 +20,7 @@ const modLogs = require('@features/mod-logs')
 const client = new Commando.CommandoClient({
   owner: '262668355520036874',
   commandPrefix: config.prefix,
+  invite: 'https://discord.gg/Sk6ftSF'
 })
 
 client.setProvider(
@@ -37,6 +38,7 @@ client.setProvider(
 
 client.on('ready', async () => {
   console.log('The client is ready!')
+  client.user.setActivity('with Commando')
 
   await mongo()
 
