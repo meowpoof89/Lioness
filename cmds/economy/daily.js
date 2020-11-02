@@ -29,6 +29,7 @@ module.exports = class DailyCommand extends Commando.Command {
     const { guild, member } = message
     const { id } = member
     const guildId = guild.id
+    const userId = member.id
     
 
     if (claimedCache.includes(id)) {
