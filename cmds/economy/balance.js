@@ -20,7 +20,7 @@ module.exports = class BalanceCommand extends Commando.Command {
 
     const gold = await economy.getGold(guildId, userId)
 
-    channel.message.reply(`${userId} has ${gold} gold bars!`)
+    message.reply(`${userId} has ${gold} gold bars!`)
 
 
     }
