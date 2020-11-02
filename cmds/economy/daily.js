@@ -47,8 +47,8 @@ module.exports = class DailyCommand extends Commando.Command {
 
     console.log('RESULTS:', results)
 
-    let results = []
     
+
     if (results || !!results) {
       const then = new Date(results.updatedAt).getTime()
       const now = new Date().getTime()
