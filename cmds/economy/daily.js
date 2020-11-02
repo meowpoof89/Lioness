@@ -43,7 +43,7 @@ module.exports = class DailyCommand extends Commando.Command {
     const obj = {
       guildId: guild.id,
       userId: id,
-      gold: Number,
+      
     }
 
     const results = await dailyRewardsSchema.findOne(obj)
