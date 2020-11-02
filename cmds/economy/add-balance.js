@@ -1,7 +1,6 @@
 const economy = require('@features/economy')
 const Commando = require('discord.js-commando')
 
-
 module.exports = class AddGoldCommand extends Commando.Command {
     constructor(client) {
       super(client, { 
@@ -9,10 +8,11 @@ module.exports = class AddGoldCommand extends Commando.Command {
         group: 'economy',
         memberName: 'addgold',
         description: 'Adds gold to a users account',
+        userPermissions: 'ADMINISTRATOR',
     })
   }
 
-async run(message, arguments) {
+async run(message) {
     const mention = message.mentions.users.first()
 
     if (!mention) {
