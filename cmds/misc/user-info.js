@@ -1,15 +1,9 @@
 const { MessageEmbed } = require('discord.js')
-const Commando = require('discord.js-commando')
 
-module.exports = class UserInfoCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'userinfo',
-      group: 'misc',
-      memberName: 'userinfo',
+module.exports = {
+      aliases: ['userinfo', 'user'],
       description: 'Displays information a user',
-    })
-  }
+    }
 
   run = async (message) => {
     const { guild, channel } = message
@@ -50,4 +44,4 @@ module.exports = class UserInfoCommand extends Commando.Command {
 
     channel.send(embed)
   }
-}
+

@@ -1,20 +1,14 @@
-const Commando = require('discord.js-commando')
 const verificationSchema = require('@schemas/verification-channels-schema')
 const { fetch } = require('@features/verification-channels')
 
-module.exports = class SetVerificationCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'setverification',
-      group: 'misc',
-      memberName: 'setverification',
+module.exports = {
+      aliases: ['setverification', 'sv'],
       description: 'Sets the verification channel for the Discord',
       userPermissions: ['ADMINISTRATOR'],
       argsType: 'multiple',
-    })
-  }
+    }
 
-  async run(message, args) {
+  run: async (message, args) => {
     const seconds = 3
 
     if (args.length !== 2) {
@@ -89,4 +83,3 @@ module.exports = class SetVerificationCommand extends Commando.Command {
       })
     })
   }
-}

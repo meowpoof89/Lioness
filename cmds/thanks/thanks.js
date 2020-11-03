@@ -1,14 +1,9 @@
-const Commando = require('discord.js-commando')
 const thanksSchema = require('@schemas/thanks-schema')
 
-module.exports = class ThanksCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'thanks',
-      group: 'thanks',
-      memberName: 'thanks',
+module.exports = {
+      aliases: ['thank', 'thx'],
       description: 'Thanks a user for helping you',
-    })
+    
   }
 
   run = async (message) => {
@@ -88,5 +83,5 @@ module.exports = class ThanksCommand extends Commando.Command {
     message.reply(
       `You have thanked <@${targetId}>! They now have ${amount} thanks.`
     )
-  }
+  
 }

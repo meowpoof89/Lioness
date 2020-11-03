@@ -1,15 +1,10 @@
-const Commando = require('discord.js-commando')
 const thanksLeaderboardSchema = require('@schemas/thanks-leaderboard-schema')
 
-module.exports = class SetLeaderboarCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'setleaderboard',
-      group: 'thanks',
-      memberName: 'setleaderboard',
+module.exports = {
+      aliases: ['setleaderboard', 'leader'],
       userPermissions: ['ADMINISTRATOR'],
       description: 'Sets up a thanks leaderboard',
-    })
+    
   }
 
   run = async (message) => {
@@ -33,9 +28,9 @@ module.exports = class SetLeaderboarCommand extends Commando.Command {
 
     message.reply('Thanks leaderboard set!').then((message) => {
       message.delete({
-        timeout: 1000 * 5,
+        timeout: 1000 * 3,
       })
     })
     message.delete()
-  }
+  
 }

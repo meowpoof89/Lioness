@@ -1,16 +1,10 @@
-const Commando = require('discord.js-commando')
 
-module.exports = class SlowCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'slow',
-      group: 'misc',
-      memberName: 'slow',
+module.exports = {
+      aliases: ['slow'],
       userPermissions: ['ADMINISTRATOR'],
       description: 'Changes the slowmode duration for this channel',
       argsType: 'multiple',
-    })
-  }
+    }
 
   run = (message, args) => {
     const { channel } = message
@@ -39,4 +33,4 @@ module.exports = class SlowCommand extends Commando.Command {
     channel.setRateLimitPerUser(duration, args.join(' '))
     message.reply(`The slowmode for this channel has been set to ${duration}`)
   }
-}
+

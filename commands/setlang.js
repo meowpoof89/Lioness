@@ -3,10 +3,11 @@ const { languages } = require('@root/lang.json')
 const { setLanguage } = require('@util/language')
 
 module.exports = {
-  commands: ['setlang', 'setlanguage'],
+  aliases: ['setlang', 'setlanguage', 'sl'],
   minArgs: 1,
   maxArgs: 1,
   expectedArgs: '<Language>',
+  description: 'Sets the language to a supported language',
   permissions: 'ADMINISTRATOR',
   callback: async (message, arguments) => {
     const { guild } = message

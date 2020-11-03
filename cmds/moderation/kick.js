@@ -1,18 +1,12 @@
-const Commando = require('discord.js-commando')
 
-module.exports = class KickCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'kick',
-      group: 'moderation',
-      memberName: 'kick',
+module.exports = {
+      aliases: ['kick'], //optional
       description: 'Kicks a member from the discord server',
       clientPermissions: ['KICK_MEMBERS'],
       userPermissions: ['KICK_MEMBERS'],
-    })
-  }
+    }
 
-  async run(message) {
+  run: async (message) => {
     const target = message.mentions.users.first()
     if (!target) {
       message.reply('Please specify someone to kick')
@@ -29,4 +23,3 @@ module.exports = class KickCommand extends Commando.Command {
       message.reply('I cannot kick that user')
     }
   }
-}

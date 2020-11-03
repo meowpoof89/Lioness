@@ -1,17 +1,11 @@
-const Commando = require('discord.js-commando')
 const path = require('path')
 
-module.exports = class PlayAudioCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'playaudio',
-      group: 'misc',
-      memberName: 'playaudio',
+module.exports = {
+      aliases: ['play', 'audio', 'pa'],
       description: 'Plays some audio',
-    })
-  }
+    }
 
-  async run(message) {
+  run: async(message) => {
     const { voice } = message.member
 
     if (!voice.channelID) {
@@ -23,4 +17,4 @@ module.exports = class PlayAudioCommand extends Commando.Command {
       connection.play(path.join(__dirname, 'Intro.m4a'))
     })
   }
-}
+

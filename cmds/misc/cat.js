@@ -1,15 +1,10 @@
-const Commando = require('discord.js-commando')
+
 const axios = require('axios')
 
-module.exports = class CatCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'cat',
-      group: 'misc',
-      memberName: 'cat',
+module.exports = {
+
       description: 'Displays a random picture of a cat',
-    })
-  }
+    }
 
   run = async (message) => {
     axios
@@ -22,4 +17,4 @@ module.exports = class CatCommand extends Commando.Command {
         console.error('ERR:', err)
       })
   }
-}
+

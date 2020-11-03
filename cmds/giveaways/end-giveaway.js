@@ -1,17 +1,11 @@
-const Commando = require('discord.js-commando')
 
-module.exports = class EndGiveawayCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'endgiveaway',
-      group: 'giveaway',
-      memberName: 'endgiveaway',
+module.exports = {
+      aliases: ['endgiveaway', 'eg'],
       description: 'Ends a giveaway',
       userPermissions: ['ADMINISTRATOR'],
-    })
-  }
+    }
 
-  async run(message) {
+   async (message) => {
     message.delete().then(() => {
       const { channel } = message
 
@@ -37,4 +31,3 @@ module.exports = class EndGiveawayCommand extends Commando.Command {
       })
     })
   }
-}

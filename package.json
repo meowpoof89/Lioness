@@ -24,14 +24,15 @@
     "module-alias": "^2.2.2",
     "mongoose": "^5.10.11",
     "node.js": "0.0.1-security",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "wokcommands": "^1.0.1"
   },
   "_moduleAliases": {
     "@root": ".",
     "@schemas": "./schemas",
     "@util": "./util",
-    "@features": "./features/features",
-    "@commands": "./commands/commands"
+    "@features": "./features",
+    "@commands": "./commands"
   },
   "devDependencies": {},
   "repository": {

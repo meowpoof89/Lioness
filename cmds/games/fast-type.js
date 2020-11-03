@@ -1,4 +1,5 @@
-const Commando = require('discord.js-commando')
+const Discord = require('discord.js')
+const client = new Discord.Client()
 const { words } = require('@util/fast-type-words')
 
 const example = {
@@ -92,16 +93,12 @@ const gameLoop = () => {
   setTimeout(gameLoop, 1000)
 }
 
-module.exports = class FastTypeGame extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'fasttype',
-      group: 'games',
-      memberName: 'fasttype',
+module.exports = {
+      aliases: ['fasttype', 'ft'],
       description: 'Starts a fast type game',
       userPermissions: ['ADMINISTRATOR'],
-    })
-
+    }
+    
     client.on('message', (message) => {
       const { channel, content, member } = message
       const { id } = channel
@@ -142,9 +139,9 @@ module.exports = class FastTypeGame extends Commando.Command {
     })
 
     gameLoop()
-  }
+  
 
-  async run(message) {
+  run: async(message) => {
     const { channel } = message
 
     message.delete()
@@ -161,4 +158,4 @@ module.exports = class FastTypeGame extends Commando.Command {
       }
     })
   }
-}
+

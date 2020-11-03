@@ -1,17 +1,11 @@
-const Commando = require('discord.js-commando')
 const muteSchema = require('@schemas/mute-schema')
 
-module.exports = class UnmuteCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'unmute',
-      group: 'moderation',
-      memberName: 'unmute',
+module.exports = {
+      aliases: ['unmute'],
       userPermissions: ['ADMINISTRATOR'],
       description: 'Unmutes a user',
       argsType: 'multiple',
-    })
-  }
+    }
 
   run = async (message, args) => {
     //!unmute @
@@ -61,4 +55,3 @@ module.exports = class UnmuteCommand extends Commando.Command {
       message.reply('That user is not muted')
     }
   }
-}

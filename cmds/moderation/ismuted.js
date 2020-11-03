@@ -1,18 +1,12 @@
 const { MessageEmbed } = require('discord.js')
-const Commando = require('discord.js-commando')
 const muteSchema = require('@schemas/mute-schema')
 
-module.exports = class IsMutedCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: '_ismuted',
-      group: 'moderation',
-      memberName: '_ismuted',
+module.exports = {
+      aliases: ['ismuted', 'muted'],
       userPermissions: ['ADMINISTRATOR'],
       description: 'Displays mute information for a user',
       argsType: 'multiple',
-    })
-  }
+    }
 
   run = async (message, args) => {
     //!ismuted ID
@@ -55,4 +49,3 @@ module.exports = class IsMutedCommand extends Commando.Command {
 
     message.reply(embed)
   }
-}

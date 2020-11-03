@@ -1,7 +1,8 @@
 module.exports = {
-  commands: 'hasrole',
+  aliases: ['removerole', 'delrole', 'deleterole'],
   minArgs: 2,
   expectedArgs: "<Target user's @> <The role name>",
+  description: 'Takes a role from the tagged user',
   permissions: 'ADMINISTRATOR',
   callback: (message, arguments) => {
     const targetUser = message.mentions.users.first()
@@ -26,7 +27,8 @@ module.exports = {
     const member = guild.members.cache.get(targetUser.id)
 
     if (member.roles.cache.get(role.id)) {
-      message.reply(`That user has the ${roleName} role`)
+      member.roles.remove(role)
+      message.reply(`That user no longer has the ${roleName} role`)
     } else {
       message.reply(`That user does not have the ${roleName} role`)
     }

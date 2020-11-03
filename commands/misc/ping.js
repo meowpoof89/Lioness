@@ -1,5 +1,5 @@
 module.exports = {
-  commands: 'ping',
+  description: 'Tests server latency',
   callback: (message, arguments, text, client) => {
     message.reply('Calculating ping...').then((resultMessage) => {
       const ping = resultMessage.createdTimestamp - message.createdTimestamp

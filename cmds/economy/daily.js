@@ -1,4 +1,3 @@
-const Commando = require('discord.js-commando')
 const dailyRewardsSchema = require('@schemas/daily-rewards-schema')
 // const addGold = require('@commands/economy/add-balance.js')
 const economy = require('@features/economy')
@@ -15,17 +14,12 @@ clearCache()
 
 const alreadyClaimed = 'You have already claimed your daily rewards'
 
-module.exports = class DailyCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'daily',
-      group: 'economy',
-      memberName: 'daily',
-      description: 'Claims daily rewards',
-    })
-  }
+module.exports = {
 
-  async run(message) {
+      description: 'Claims daily rewards',
+    }
+
+   run: async (message) => {
     const { guild, member } = message
     const { id } = member
     const guildId = guild.id
@@ -79,4 +73,4 @@ module.exports = class DailyCommand extends Commando.Command {
     message.reply(`You have claimed your daily reward of ${daily}! 
     You now have ${newGold}!!`)
   }
-}
+

@@ -1,4 +1,3 @@
-const Commando = require('discord.js-commando')
 const muteSchema = require('@schemas/mute-schema')
 
 const reasons = {
@@ -6,17 +5,12 @@ const reasons = {
   ADVERTISING: 24,
 }
 
-module.exports = class MuteCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'mute',
-      group: 'moderation',
-      memberName: 'mute',
+module.exports = {
+      aliases: ['mute'],
       userPermissions: ['ADMINISTRATOR'],
       description: 'Mutes a user',
       argsType: 'multiple',
-    })
-  }
+    }
 
   run = async (message, args) => {
     // !mute @ reason
@@ -92,5 +86,5 @@ module.exports = class MuteCommand extends Commando.Command {
     message.reply(
       `You muted <@${target.id}> for "${reason}". They will be unmuted in ${duration} hours.`
     )
-  }
+  
 }

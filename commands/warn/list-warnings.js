@@ -1,9 +1,10 @@
 const warnSchema = require('@schemas/warn-schema')
 
 module.exports = {
-  commands: ['listwarnings', 'lw'],
+  aliases: ['listwarnings', 'lw'],
   minArgs: 1,
   expectedArgs: "<Target user's @>",
+  description: 'Shows all warnings issued to a user',
   requiredRoles: ['Moderator'],
   callback: async (message, arguments, text) => {
     const target = message.mentions.users.first()

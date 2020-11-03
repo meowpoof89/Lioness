@@ -1,4 +1,3 @@
-const Commando = require('discord.js-commando')
 const { CanvasRenderService } = require('chartjs-node-canvas')
 const { MessageAttachment } = require('discord.js')
 
@@ -20,21 +19,16 @@ const chartCallback = (ChartJS) => {
     beforeDraw: (chartInstance) => {
       const { chart } = chartInstance
       const { ctx } = chart
-      ctx.fillStyle = 'white'
+      ctx.fillStyle = 'black'
       ctx.fillRect(0, 0, chart.width, chart.height)
     },
   })
 }
 
-module.exports = class ChartCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'chart',
-      group: 'misc',
-      memberName: 'chart',
+module.exports = {
+      aliases: ['chart'],
       description: 'Displays a chart',
-    })
-  }
+    }
 
   run = async (message) => {
     const canvas = new CanvasRenderService(width, height, chartCallback)
@@ -59,4 +53,3 @@ module.exports = class ChartCommand extends Commando.Command {
 
     message.channel.send(attachment)
   }
-}

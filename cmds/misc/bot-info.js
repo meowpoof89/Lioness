@@ -1,16 +1,11 @@
 const { MessageEmbed } = require('discord.js')
-const Commando = require('discord.js-commando')
 const { version } = require('@root/package.json')
-
-module.exports = class BotInfoCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'botinfo',
-      group: 'misc',
-      memberName: 'botinfo',
+const Discord = require('discord.js')
+const client = new Discord.Client()
+module.exports = {
+      aliases: ['info'],
       description: 'Displays bot information',
-    })
-  }
+    }
 
   run = async (message) => {
     let totalMembers = 0
@@ -53,4 +48,3 @@ module.exports = class BotInfoCommand extends Commando.Command {
 
     message.channel.send(embed)
   }
-}

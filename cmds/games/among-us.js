@@ -1,22 +1,20 @@
-const Commando = require('discord.js-commando')
 const { MessageEmbed } = require('discord.js')
+const Discord = require('discord.js')
+const client = new Discord.Client()
 
 const amongUsCategorySchema = require('@schemas/among-us-category-schema')
 
 const channelNameStart = 'Among Us'
 
-module.exports = class AmongUsCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'au',
-      group: 'games',
-      memberName: 'au',
+module.exports = {
+      aliases: ['au'],
       description: 'Makes it easier to play "Among Us" with friends',
       argsType: 'multiple',
-    })
+    }
 
     client.on('voiceStateUpdate', (oldState) => {
       const { channel } = oldState
+
 
       if (
         channel &&
@@ -27,7 +25,7 @@ module.exports = class AmongUsCommand extends Commando.Command {
         console.log(`Deleting channel "${channel.name}"`)
       }
     })
-  }
+  
 
   run = async (message, args) => {
     //!au <Region> <Code>
@@ -74,4 +72,4 @@ module.exports = class AmongUsCommand extends Commando.Command {
 
     channel.send(embed)
   }
-}
+

@@ -1,18 +1,11 @@
-const Commando = require('discord.js-commando')
-
 const amongUsCategorySchema = require('@schemas/among-us-category-schema')
 
-module.exports = class AmongUsCategoryCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'aucat',
-      group: 'games',
-      memberName: 'aucat',
+module.exports = {
+
       userPermissions: ['ADMINISTRATOR'],
       description:
         'Specifies the category to create Among Us voice channels in',
-    })
-  }
+    }
 
   run = async (message, args) => {
     const categoryId = args
@@ -38,4 +31,4 @@ module.exports = class AmongUsCategoryCommand extends Commando.Command {
 
     message.reply('Among Us category set!')
   }
-}
+

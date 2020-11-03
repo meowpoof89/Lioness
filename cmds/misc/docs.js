@@ -1,15 +1,9 @@
-const Commando = require('discord.js-commando')
 const axios = require('axios')
 
-module.exports = class DocsCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'docs',
-      group: 'misc',
-      memberName: 'docs',
+module.exports = {
+      aliases: ['docs'],
       description: 'Displays Discord.JS documentation',
-    })
-  }
+    }
 
   run = async (message, args) => {
     const uri = `https://djsdocs.sorta.moe/v2/embed?src=stable&q=${encodeURIComponent(
@@ -31,4 +25,3 @@ module.exports = class DocsCommand extends Commando.Command {
         console.error(err)
       })
   }
-}

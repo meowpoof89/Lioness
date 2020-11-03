@@ -1,16 +1,10 @@
-const Commando = require('discord.js-commando')
 const tempChannelSchema = require('@schemas/temp-channels-schema')
 
-module.exports = class TempChannelCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'tempchannel',
-      group: 'misc',
-      memberName: 'tempchannel',
+module.exports =  {
+      aliases: ['tempchannel', 'tc', 'temp'],
       userPermissions: ['ADMINISTRATOR'],
       description: 'Creates a temporary channel',
-    })
-  }
+    }
 
   run = async (message) => {
     const { guild, member } = message
@@ -59,4 +53,3 @@ module.exports = class TempChannelCommand extends Commando.Command {
       expires,
     }).save()
   }
-}

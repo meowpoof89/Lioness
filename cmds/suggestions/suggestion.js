@@ -1,17 +1,12 @@
-const Commando = require('discord.js-commando')
 const { MessageEmbed } = require('discord.js')
 const { statusMessages, suggestionCache } = require('@features/suggestions')
 
-module.exports = class SuggestionCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'suggestion',
-      group: 'suggestions',
-      memberName: 'suggestion',
+module.exports = {
+      aliases: ['suggestion', 'sug'],
       userPermissions: ['ADMINISTRATOR'],
       description: 'Updates the status of a suggestion',
       argsType: 'multiple',
-    })
+    
   }
 
   run = async (message, args) => {
@@ -71,5 +66,5 @@ module.exports = class SuggestionCommand extends Commando.Command {
     }
 
     targetMessage.edit(embed)
-  }
+  
 }

@@ -2,13 +2,14 @@ const commandPrefixSchema = require('@schemas/command-prefix-schema')
 
 // Importing command-base so we have access to the
 // "updateCache" function which I forgot to cover in the video
-const commandBase = require('@root/commands/command-base')
+// const commandBase = require('@root/commands/command-base')
 
 module.exports = {
-  commands: 'setprefix',
+  aliases: ['sp'],
   minArgs: 1,
   maxArgs: 1,
   expectedArgs: "<This bot's new command prefix>",
+  description: 'Changes the bot\'s command prefix',
   permissionError: 'You must be an admin to run this command.',
   permissions: 'ADMINISTRATOR',
   callback: async (message, arguments, text) => {

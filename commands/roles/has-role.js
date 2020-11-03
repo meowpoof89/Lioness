@@ -1,7 +1,8 @@
 module.exports = {
-  commands: 'giverole',
+  aliases: ['hr', 'whohas'],
   minArgs: 2,
   expectedArgs: "<Target user's @> <The role name>",
+  description: 'Check to see if user has a role',
   permissions: 'ADMINISTRATOR',
   callback: (message, arguments) => {
     const targetUser = message.mentions.users.first()
@@ -24,8 +25,11 @@ module.exports = {
     }
 
     const member = guild.members.cache.get(targetUser.id)
-    member.roles.add(role)
 
-    message.reply(`that user now has the "${roleName}" role`)
+    if (member.roles.cache.get(role.id)) {
+      message.reply(`That user has the ${roleName} role`)
+    } else {
+      message.reply(`That user does not have the ${roleName} role`)
+    }
   },
 }

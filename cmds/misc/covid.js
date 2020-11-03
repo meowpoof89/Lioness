@@ -17,15 +17,10 @@ const chartCallback = (ChartJS) => {
   })
 }
 
-module.exports = class CovidCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'covid',
-      group: 'misc',
-      memberName: 'covid',
+module.exports = {
+      aliases: 'covid',
       description: 'Displays stats about covid-19',
-    })
-  }
+    }
 
   run = async (message, args) => {
     const days = parseInt(args) || 30
@@ -102,4 +97,3 @@ module.exports = class CovidCommand extends Commando.Command {
 
     message.channel.send(attachment)
   }
-}

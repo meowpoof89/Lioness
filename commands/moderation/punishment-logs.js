@@ -1,10 +1,11 @@
 const punishmentLogSchema = require('@schemas/punishment-log-schema')
 
 module.exports = {
-  commands: ['punishmentlogs', 'punishlogs'],
+  aliases: ['punishmentlogs', 'punishlogs', 'punlog'],
   minArgs: 1,
   maxArgs: 1,
   expectedArgs: "<Target user's @>",
+  description: 'Loads punishment logs for a tagged user',
   permission: 'ADMINISTRATORS',
   callback: async (message, arguments) => {
     const target = message.mentions.users.first()

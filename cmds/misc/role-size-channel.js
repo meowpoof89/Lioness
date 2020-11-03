@@ -1,19 +1,13 @@
-const Commando = require('discord.js-commando')
 const roleSizeSchema = require('@schemas/role-size-schema')
 const { fetchChannelData } = require('@features/role-size-channel')
 
-module.exports = class RoleCounterCommand extends Commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'rolecounter',
-      group: 'misc',
-      memberName: 'rolecounter',
+module.exports = {
+      aliases: ['rsc', 'rolesize'],
       userPermissions: ['ADMINISTRATOR'],
       description:
         'Enables a channel to count the number of members in a role or a guild',
       argsType: 'multiple',
-    })
-  }
+    }
 
   run = async (message, args) => {
     //!rolecounter 475984375894435 47543567435643 Python:
@@ -66,4 +60,4 @@ module.exports = class RoleCounterCommand extends Commando.Command {
 
     fetchChannelData()
   }
-}
+
