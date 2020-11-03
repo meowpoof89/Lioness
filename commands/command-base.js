@@ -55,7 +55,7 @@ let recentlyRan = [] // guildId-userId-command
 
 module.exports = (client, commandOptions) => {
   let {
-    commands,
+    commands = '',
     expectedArgs = '',
     permissionError = 'You do not have permission to run this command.',
     minArgs = 0,
