@@ -40,7 +40,8 @@ client.on('ready', async () => {
   
     if (ver === 'production') {
       client.user.setActivity('An Idiot\'s Guide', { type: 'STREAMING', url: 'https://twitch.tv/something' })
-    } else {
+    } 
+    if (ver === 'development') {
       client.user.setActivity('in code land', { type: 'PLAYING' });
     }
  
