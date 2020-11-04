@@ -1,5 +1,5 @@
 const roles = ['Admin', 'BOT']
-
+const prefix = process.env.PREFIX
 module.exports = (client) => {
   const channelId = '766031384980095046'//mod-log channel
 

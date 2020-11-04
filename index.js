@@ -1,14 +1,12 @@
 require('module-alias/register')
 
-// const Discord = require('discord.js')
-// const client = new Discord.Client()
+
 require('dotenv').config();
 const { MongoClient } = require('mongodb')
 const MongoDBProvider = require('commando-provider-mongo')
 const path = require('path')
 const Commando = require('discord.js-commando')
 const prefix = process.env.PREFIX
-// const config = require('@root/config.json')
 const { loadLanguages } = require('@util/language')
 const loadCommands = require('@root/commands/load-commands')
 const commandBase = require('@root/commands/command-base')
